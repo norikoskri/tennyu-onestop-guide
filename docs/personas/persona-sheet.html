@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ペルソナシート - 佐藤美咲</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .persona-sheet {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .photo-area {
+      width: 120px;
+      height: 120px;
+      background: #e5e7eb;
+      border-radius: 50%;
+      border: 4px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .header-info h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .header-info .subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .header-info .tagline {
+      margin-top: 12px;
+      font-size: 16px;
+      font-style: italic;
+      opacity: 0.95;
+    }
+
+    .content {
+      padding: 32px;
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .info-card {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .info-card h3 {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .info-card p {
+      font-size: 16px;
+      color: #1f2937;
+      font-weight: 500;
+    }
+
+    .family-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .family-member {
+      background: #f0f9ff;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid #bae6fd;
+    }
+
+    .family-member.self {
+      background: #fef3c7;
+      border-color: #fcd34d;
+    }
+
+    .family-member .icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .family-member .name {
+      font-size: 14px;
+      font-weight: bold;
+      color: #1f2937;
+    }
+
+    .family-member .detail {
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    .pain-list, .need-list {
+      list-style: none;
+    }
+
+    .pain-list li, .need-list li {
+      padding: 12px 16px;
+      background: #fef2f2;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #991b1b;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .pain-list li::before {
+      content: "😰";
+      font-size: 16px;
+    }
+
+    .need-list li {
+      background: #f0fdf4;
+      color: #166534;
+    }
+
+    .need-list li::before {
+      content: "✨";
+      font-size: 16px;
+    }
+
+    .quote-box {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border-radius: 12px;
+      padding: 20px 24px;
+      font-size: 15px;
+      color: #92400e;
+      font-style: italic;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .quote-box::before {
+      content: '"';
+      font-size: 48px;
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      opacity: 0.3;
+    }
+
+    .quote-box p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .move-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #f0f9ff;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .move-info .from, .move-info .to {
+      flex: 1;
+      text-align: center;
+    }
+
+    .move-info .arrow {
+      font-size: 32px;
+      color: #3b82f6;
+    }
+
+    .move-info .label {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+
+    .move-info .location {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1f2937;
+    }
+
+    .move-info .date {
+      font-size: 13px;
+      color: #3b82f6;
+      margin-top: 8px;
+    }
+
+    .footer {
+      background: #f9fafb;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 12px;
+      color: #9ca3af;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="persona-sheet">
+    <!-- ヘッダー -->
+    <div class="header">
+      <div class="photo-area">
+        画像を<br>挿入
+      </div>
+      <div class="header-info">
+        <h1>佐藤 美咲（38歳）</h1>
+        <p class="subtitle">IT企業 プロジェクトマネージャー（時短・リモート併用）</p>
+        <p class="tagline">「子どもたちのために、もっと良い環境で暮らしたい」</p>
+      </div>
+    </div>
+
+    <!-- コンテンツ -->
+    <div class="content">
+      <!-- 引越し情報 -->
+      <div class="section">
+        <h2 class="section-title">引越し情報</h2>
+        <div class="move-info">
+          <div class="from">
+            <p class="label">現住所</p>
+            <p class="location">埼玉県さいたま市</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="to">
+            <p class="label">引越し先</p>
+            <p class="location">横浜市青葉区美しが丘</p>
+            <p class="date">2026年2月15日 引越し予定</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 家族構成 -->
+      <div class="section">
+        <h2 class="section-title">家族構成（4人家族）</h2>
+        <div class="family-grid">
+          <div class="family-member self">
+            <div class="icon">👩</div>
+            <p class="name">美咲（本人）</p>
+            <p class="detail">38歳 / IT企業PM</p>
+          </div>
+          <div class="family-member">
+            <div class="icon">👨</div>
+            <p class="name">健一（夫）</p>
+            <p class="detail">40歳 / 商社勤務</p>
+          </div>
+          <div class="family-member">
+            <div class="icon">👧</div>
+            <p class="name">結衣（長女）</p>
+            <p class="detail">8歳 / 小学2年生</p>
+          </div>
+          <div class="family-member">
+            <div class="icon">👶</div>
+            <p class="name">陽菜（次女）</p>
+            <p class="detail">3歳 / 保育園</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2カラム: 困りごと & ニーズ -->
+      <div class="grid-2">
+        <!-- 困りごと -->
+        <div class="section">
+          <h2 class="section-title">困りごと（ペインポイント）</h2>
+          <ul class="pain-list">
+            <li>長女の転校・次女の保育園転園の手続きが不安</li>
+            <li>情報が分散していて何から手をつけるべきかわからない</li>
+            <li>知り合いがいない土地での生活スタート</li>
+            <li>地元のリアルな情報（病院・買い物）がほしい</li>
+          </ul>
+        </div>
+
+        <!-- ニーズ -->
+        <div class="section">
+          <h2 class="section-title">求めていること（ニーズ）</h2>
+          <ul class="need-list">
+            <li>家族構成に応じた「やることリスト」の自動生成</li>
+            <li>期限と優先順位がわかる手続き管理</li>
+            <li>子育て世帯向けの地域情報（小児科・公園など）</li>
+            <li>地元の人しか知らない「現場知」</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 一言 -->
+      <div class="section">
+        <h2 class="section-title">ユーザーの声</h2>
+        <div class="quote-box">
+          <p>引越しって本当に大変。特に子どもがいると、自分のことだけじゃなくて学校や保育園のことも考えないといけない。このアプリがあれば、家族構成に合った手続きリストが自動で作られて、優先順位もわかる。しかも地元の人しか知らない情報まで教えてくれるなんて、本当に助かる。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <div class="footer">
+      転入・引越しワンストップ支援 | ペルソナシート | 作成日: 2026-01-19
+    </div>
+  </div>
+</body>
+</html>
