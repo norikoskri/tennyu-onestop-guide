@@ -141,6 +141,16 @@ export function ChatContainer({ initialMode = "onboarding" }: ChatContainerProps
 
   // クイックアクション選択
   const handleQuickAction = (action: string) => {
+    // ダッシュボードへの遷移
+    if (action.includes("ダッシュボード")) {
+      router.push("/dashboard");
+      return;
+    }
+    // 地域ガイドへの遷移
+    if (action.includes("地域ガイドを見る")) {
+      router.push("/guide");
+      return;
+    }
     handleSend(action);
   };
 

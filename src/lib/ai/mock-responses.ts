@@ -261,11 +261,11 @@ export function getOnboardingResponse(
           message: `ありがとうございます！🎉
 
 入力いただいた情報をもとに、やることリストを作成しました。
-ダッシュボードで確認できます。
 
-何かご質問があれば、いつでもお気軽にどうぞ！`,
+下のボタンからダッシュボードへ移動してください！`,
           nextStep: "complete",
           extractedData: { onboardingCompleted: true },
+          quickReplies: ["📊 ダッシュボードへ"],
         };
       } else {
         return {
