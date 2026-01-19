@@ -9,20 +9,24 @@ import { BottomNav, PageHeader, PageContainer } from "@/components/layout";
 
 export default function TaskDetailPage() {
   const params = useParams();
-  const { isOnboarded } = useUser();
+  const { isOnboarded, isInitialized } = useUser();
   const { tasks, updateTaskStatus } = useTasks();
 
   const taskId = params.id as string;
   const task = tasks.find((t) => t.id === taskId);
 
   useEffect(() => {
-    if (!isOnboarded) {
+    if (isInitialized && !isOnboarded) {
       window.location.href = "/";
     }
-  }, [isOnboarded]);
+  }, [isInitialized, isOnboarded]);
 
-  if (!isOnboarded) {
-    return null;
+  if (!isInitialized || !isOnboarded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500" />
+      </div>
+    );
   }
 
   if (!task) {

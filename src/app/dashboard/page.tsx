@@ -15,15 +15,16 @@ import { getRegionByPostalCode, getDefaultRegion } from "@/lib/utils/region";
 import { RegionInfo } from "@/types";
 
 export default function DashboardPage() {
-  const { profile, isOnboarded } = useUser();
+  const { profile, isOnboarded, isInitialized } = useUser();
   const { tasks, updateTaskStatus, completedCount, totalCount } = useTasks();
   const [region, setRegion] = useState<RegionInfo | null>(null);
 
   useEffect(() => {
-    if (!isOnboarded) {
+    // 初期化完了後にのみリダイレクト判定
+    if (isInitialized && !isOnboarded) {
       window.location.href = "/";
     }
-  }, [isOnboarded]);
+  }, [isInitialized, isOnboarded]);
 
   useEffect(() => {
     if (isOnboarded && profile) {

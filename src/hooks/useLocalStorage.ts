@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from "react";
 export function useLocalStorage<T>(
   key: string,
   initialValue: T
-): [T, (value: T | ((prev: T) => T)) => void, () => void] {
+): [T, (value: T | ((prev: T) => T)) => void, () => void, boolean] {
   // 初期値を取得する関数
   const getStoredValue = useCallback((): T => {
     if (typeof window === "undefined") {
@@ -61,7 +61,7 @@ export function useLocalStorage<T>(
   }, [key, initialValue]);
 
   // 初期化完了前は initialValue を返す
-  return [isInitialized ? storedValue : initialValue, setValue, removeValue];
+  return [isInitialized ? storedValue : initialValue, setValue, removeValue, isInitialized];
 }
 
 // ストレージキーの定数

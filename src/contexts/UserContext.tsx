@@ -15,12 +15,13 @@ type UserContextType = {
   setProfile: (profile: UserProfile) => void;
   clearProfile: () => void;
   isOnboarded: boolean;
+  isInitialized: boolean;
 };
 
 const UserContext = createContext<UserContextType | null>(null);
 
 export function UserProvider({ children }: { children: ReactNode }) {
-  const [profile, setStoredProfile, clearStoredProfile] =
+  const [profile, setStoredProfile, clearStoredProfile, isInitialized] =
     useLocalStorage<UserProfile | null>(STORAGE_KEYS.USER_PROFILE, null);
 
   const updateProfile = useCallback(
@@ -62,6 +63,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
         setProfile,
         clearProfile,
         isOnboarded,
+        isInitialized,
       }}
     >
       {children}

@@ -8,17 +8,21 @@ import { BottomNav, PageHeader, PageContainer } from "@/components/layout";
 import { sortTasksByPriority } from "@/lib/tasks/prioritizer";
 
 export default function TasksPage() {
-  const { isOnboarded } = useUser();
+  const { isOnboarded, isInitialized } = useUser();
   const { tasks, updateTaskStatus, completedCount, totalCount } = useTasks();
 
   useEffect(() => {
-    if (!isOnboarded) {
+    if (isInitialized && !isOnboarded) {
       window.location.href = "/";
     }
-  }, [isOnboarded]);
+  }, [isInitialized, isOnboarded]);
 
-  if (!isOnboarded) {
-    return null;
+  if (!isInitialized || !isOnboarded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500" />
+      </div>
+    );
   }
 
   const sortedTasks = sortTasksByPriority(tasks);
