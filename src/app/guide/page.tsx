@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { useUser } from "@/contexts/UserContext";
 import { CategoryCard } from "@/components/guide";
 import { BottomNav, PageHeader, PageContainer } from "@/components/layout";
@@ -9,7 +8,6 @@ import { getRegionByPostalCode, getDefaultRegion } from "@/lib/utils/region";
 import { RegionInfo } from "@/types";
 
 export default function GuidePage() {
-  const router = useRouter();
   const { profile, isOnboarded } = useUser();
   const [region, setRegion] = useState<RegionInfo | null>(null);
 
@@ -58,7 +56,7 @@ export default function GuidePage() {
             <CategoryCard
               key={category.id}
               category={category}
-              onClick={() => router.push(`/guide/${category.id}`)}
+              onClick={() => { window.location.href = `/guide/${category.id}`; }}
             />
           ))}
         </div>

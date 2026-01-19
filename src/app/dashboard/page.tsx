@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { useUser } from "@/contexts/UserContext";
 import { useTasks } from "@/contexts/TaskContext";
 import {
@@ -16,16 +15,15 @@ import { getRegionByPostalCode, getDefaultRegion } from "@/lib/utils/region";
 import { RegionInfo } from "@/types";
 
 export default function DashboardPage() {
-  const router = useRouter();
   const { profile, isOnboarded } = useUser();
   const { tasks, updateTaskStatus, completedCount, totalCount } = useTasks();
   const [region, setRegion] = useState<RegionInfo | null>(null);
 
   useEffect(() => {
     if (!isOnboarded) {
-      router.push("/");
+      window.location.href = "/";
     }
-  }, [isOnboarded, router]);
+  }, [isOnboarded]);
 
   useEffect(() => {
     if (isOnboarded && profile) {

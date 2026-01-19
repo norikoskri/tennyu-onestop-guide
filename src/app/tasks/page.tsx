@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { useUser } from "@/contexts/UserContext";
 import { useTasks } from "@/contexts/TaskContext";
 import { TaskCard } from "@/components/tasks";
@@ -9,15 +8,14 @@ import { BottomNav, PageHeader, PageContainer } from "@/components/layout";
 import { sortTasksByPriority } from "@/lib/tasks/prioritizer";
 
 export default function TasksPage() {
-  const router = useRouter();
   const { isOnboarded } = useUser();
   const { tasks, updateTaskStatus, completedCount, totalCount } = useTasks();
 
   useEffect(() => {
     if (!isOnboarded) {
-      router.push("/");
+      window.location.href = "/";
     }
-  }, [isOnboarded, router]);
+  }, [isOnboarded]);
 
   if (!isOnboarded) {
     return null;
@@ -44,7 +42,7 @@ export default function TasksPage() {
               key={task.id}
               task={task}
               onStatusChange={handleStatusChange}
-              onClick={() => router.push(`/tasks/${task.id}`)}
+              onClick={() => { window.location.href = `/tasks/${task.id}`; }}
             />
           ))}
         </div>

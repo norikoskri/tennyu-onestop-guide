@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useUser } from "@/contexts/UserContext";
 import { InfoItem } from "@/components/guide";
 import { BottomNav, PageHeader, PageContainer } from "@/components/layout";
@@ -9,7 +9,6 @@ import { getRegionByPostalCode, getDefaultRegion } from "@/lib/utils/region";
 import { RegionInfo, RegionCategory } from "@/types";
 
 export default function CategoryPage() {
-  const router = useRouter();
   const params = useParams();
   const { profile, isOnboarded } = useUser();
   const [region, setRegion] = useState<RegionInfo | null>(null);
@@ -43,7 +42,7 @@ export default function CategoryPage() {
         <div className="text-center">
           <p className="text-gray-500 mb-4">カテゴリが見つかりません</p>
           <button
-            onClick={() => router.push("/guide")}
+            onClick={() => { window.location.href = "/guide"; }}
             className="text-blue-500 hover:underline"
           >
             地域ガイドに戻る

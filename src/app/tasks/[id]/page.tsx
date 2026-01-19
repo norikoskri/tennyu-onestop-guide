@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useUser } from "@/contexts/UserContext";
 import { useTasks } from "@/contexts/TaskContext";
 import { TaskDetail } from "@/components/tasks";
 import { BottomNav, PageHeader, PageContainer } from "@/components/layout";
 
 export default function TaskDetailPage() {
-  const router = useRouter();
   const params = useParams();
   const { isOnboarded } = useUser();
   const { tasks, updateTaskStatus } = useTasks();
@@ -18,9 +17,9 @@ export default function TaskDetailPage() {
 
   useEffect(() => {
     if (!isOnboarded) {
-      router.push("/");
+      window.location.href = "/";
     }
-  }, [isOnboarded, router]);
+  }, [isOnboarded]);
 
   if (!isOnboarded) {
     return null;
@@ -32,7 +31,7 @@ export default function TaskDetailPage() {
         <div className="text-center">
           <p className="text-gray-500 mb-4">タスクが見つかりません</p>
           <button
-            onClick={() => router.push("/tasks")}
+            onClick={() => { window.location.href = "/tasks"; }}
             className="text-blue-500 hover:underline"
           >
             タスク一覧に戻る
@@ -44,7 +43,7 @@ export default function TaskDetailPage() {
 
   const handleComplete = () => {
     updateTaskStatus(task.id, "completed");
-    router.push("/dashboard");
+    window.location.href = "/dashboard";
   };
 
   return (
