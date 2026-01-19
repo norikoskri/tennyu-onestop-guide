@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 interface NavItem {
@@ -17,8 +17,11 @@ const navItems: NavItem[] = [
 ];
 
 export function BottomNav() {
-  const router = useRouter();
   const pathname = usePathname();
+
+  const navigate = (href: string) => {
+    window.location.href = href;
+  };
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -34,7 +37,7 @@ export function BottomNav() {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                onClick={() => router.push(item.href)}
+                onClick={() => navigate(item.href)}
                 className={clsx(
                   "flex flex-col items-center gap-0.5 sm:gap-1 px-2 sm:px-4 py-2 min-w-[60px] sm:min-w-[72px] transition-colors",
                   isActive(item.href)
@@ -67,7 +70,7 @@ export function BottomNav() {
           {navItems.map((item) => (
             <button
               key={item.href}
-              onClick={() => router.push(item.href)}
+              onClick={() => navigate(item.href)}
               className={clsx(
                 "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors",
                 isActive(item.href)
