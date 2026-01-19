@@ -100,19 +100,20 @@ export function ChatContainer({ initialMode = "onboarding" }: ChatContainerProps
         }
 
         // オンボーディングの場合
-        if (mode === "onboarding" && nextStep) {
-          setCurrentStep(nextStep);
+        if (mode === "onboarding") {
+          if (nextStep) {
+            setCurrentStep(nextStep);
+          }
 
           // データを収集
           if (extractedData) {
-            setCollectedData((prev) => ({ ...prev, ...extractedData }));
+            // 最新のデータをマージ
+            const mergedData = { ...collectedData, ...extractedData };
+            setCollectedData(mergedData);
 
             // オンボーディング完了
-            if (extractedData.onboardingCompleted) {
-              const newProfile = createProfileFromData({
-                ...collectedData,
-                ...extractedData,
-              });
+            if (extractedData.onboardingCompleted === true) {
+              const newProfile = createProfileFromData(mergedData);
               setProfile(newProfile);
               generateTasks(newProfile);
 
