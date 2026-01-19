@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useUser } from "@/contexts/UserContext";
-import { CategoryCard } from "@/components/guide";
+import { CategoryCard, TopicCard, GENBA_CHI_TOPICS } from "@/components/guide";
 import { BottomNav, PageHeader, PageContainer } from "@/components/layout";
 import { getRegionByPostalCode, getDefaultRegion } from "@/lib/utils/region";
 import { RegionInfo } from "@/types";
@@ -37,20 +37,39 @@ export default function GuidePage() {
       />
 
       <PageContainer>
-        {/* 説明 */}
-        <div className="bg-orange-50 rounded-xl p-3 sm:p-4 flex items-start gap-2 sm:gap-3 mb-4 sm:mb-6">
-          <span className="text-xl sm:text-2xl">📮</span>
-          <div>
-            <p className="text-xs sm:text-sm text-orange-800 font-medium mb-0.5 sm:mb-1">
-              郵便局員からの「現場知」情報
-            </p>
-            <p className="text-[10px] sm:text-xs text-orange-700">
-              毎日地域を回る配達員ならではの生活に役立つ情報をお届けします
-            </p>
+        {/* 現場知トピック */}
+        <div className="mb-6 sm:mb-8">
+          <div className="flex items-center gap-2 mb-3 sm:mb-4">
+            <span className="text-xl sm:text-2xl">📮</span>
+            <div>
+              <h2 className="text-base sm:text-lg font-bold text-gray-900">
+                郵便局員の「現場知」
+              </h2>
+              <p className="text-[10px] sm:text-xs text-gray-500">
+                配達員ならではの地域情報をピックアップ
+              </p>
+            </div>
+          </div>
+
+          {/* 横スクロールできるトピックカード */}
+          <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-2 -mx-4 px-4 sm:-mx-6 sm:px-6">
+            {GENBA_CHI_TOPICS.map((topic) => (
+              <div key={topic.id} className="flex-shrink-0 w-64 sm:w-72">
+                <TopicCard
+                  topic={topic}
+                  onClick={() => { window.location.href = topic.link; }}
+                />
+              </div>
+            ))}
           </div>
         </div>
 
         {/* カテゴリ一覧 */}
+        <div className="mb-4">
+          <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
+            カテゴリから探す
+          </h2>
+        </div>
         <div className="space-y-2 sm:space-y-3">
           {region.categories.map((category) => (
             <CategoryCard
