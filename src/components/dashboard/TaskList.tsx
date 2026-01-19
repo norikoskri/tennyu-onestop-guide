@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import clsx from "clsx";
 import { ProcedureTask, TaskCategory } from "@/types";
 import {
@@ -21,7 +20,6 @@ type TaskListProps = {
 type FilterType = "all" | "pending" | "completed";
 
 export function TaskList({ tasks, onStatusChange }: TaskListProps) {
-  const router = useRouter();
   const [filter, setFilter] = useState<FilterType>("all");
   const [categoryFilter, setCategoryFilter] = useState<TaskCategory | "all">("all");
 
@@ -107,7 +105,7 @@ export function TaskList({ tasks, onStatusChange }: TaskListProps) {
               key={task.id}
               task={task}
               onStatusChange={onStatusChange}
-              onClick={() => router.push(`/tasks/${task.id}`)}
+              onClick={() => { window.location.href = `/tasks/${task.id}`; }}
             />
           ))
         )}

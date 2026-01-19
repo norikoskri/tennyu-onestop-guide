@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { UserProfile, RegionInfo } from "@/types";
 
 interface RecommendationsProps {
@@ -18,7 +17,6 @@ interface Recommendation {
 }
 
 export function Recommendations({ profile, region }: RecommendationsProps) {
-  const router = useRouter();
 
   const getRecommendations = (): Recommendation[] => {
     const recommendations: Recommendation[] = [];
@@ -180,7 +178,7 @@ export function Recommendations({ profile, region }: RecommendationsProps) {
         {recommendations.map((rec) => (
           <button
             key={rec.id}
-            onClick={() => router.push(rec.link)}
+            onClick={() => { window.location.href = rec.link; }}
             className="w-full px-4 py-3 flex items-center gap-3 hover:bg-gray-50 transition-colors text-left"
           >
             <span className="text-xl sm:text-2xl flex-shrink-0">{rec.icon}</span>

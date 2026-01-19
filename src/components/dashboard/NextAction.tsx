@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import clsx from "clsx";
 import { ProcedureTask } from "@/types";
 import {
@@ -17,8 +16,6 @@ type NextActionProps = {
 };
 
 export function NextAction({ task, onComplete }: NextActionProps) {
-  const router = useRouter();
-
   if (!task) {
     return (
       <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 text-white">
@@ -92,7 +89,7 @@ export function NextAction({ task, onComplete }: NextActionProps) {
       {/* アクションボタン */}
       <div className="flex gap-3">
         <button
-          onClick={() => router.push(`/tasks/${task.id}`)}
+          onClick={() => { window.location.href = `/tasks/${task.id}`; }}
           className="flex-1 flex items-center justify-center gap-2 bg-white text-gray-800 font-medium py-2.5 px-4 rounded-lg hover:bg-gray-100 transition-colors"
         >
           詳細を見る
