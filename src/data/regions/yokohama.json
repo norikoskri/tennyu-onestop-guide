@@ -1,0 +1,175 @@
+{
+  "id": "yokohama-aoba",
+  "postalCode": "225",
+  "prefecture": "神奈川県",
+  "city": "横浜市青葉区",
+  "town": "たまプラーザエリア",
+  "categories": [
+    {
+      "id": "daily_life",
+      "name": "生活基本",
+      "icon": "🏠",
+      "description": "ゴミ出し・町内会など日常生活の基本情報",
+      "items": [
+        {
+          "id": "garbage_1",
+          "title": "ゴミ収集日（美しが丘エリア）",
+          "description": "可燃ゴミ: 火・金、不燃ゴミ: 第2・4水曜、缶・びん: 月曜",
+          "details": "横浜市は分別が細かいので最初は戸惑うかも。特にプラスチックは「プラマーク」があるものだけ分別します。",
+          "tags": ["生活", "ゴミ"],
+          "source": {
+            "type": "postal_worker",
+            "name": "青葉郵便局 配達員",
+            "verifiedAt": "2026-01-08"
+          },
+          "updatedAt": "2026-01-08"
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "name": "子育て",
+      "icon": "👶",
+      "description": "保育園・学校・公園など子育て関連情報",
+      "items": [
+        {
+          "id": "park_1",
+          "title": "美しが丘公園",
+          "description": "広い芝生と遊具が充実した公園",
+          "details": "週末午前中は子連れファミリーで賑わいます。駐車場はすぐ満車になるので早めに。",
+          "tags": ["子育て", "公園"],
+          "source": {
+            "type": "community",
+            "name": "地元パパの会",
+            "verifiedAt": "2026-01-05"
+          },
+          "updatedAt": "2026-01-05",
+          "location": {
+            "address": "神奈川県横浜市青葉区美しが丘2-22"
+          }
+        },
+        {
+          "id": "library_1",
+          "title": "山内図書館の子ども向けイベント",
+          "description": "毎週土曜に読み聞かせ会を開催",
+          "details": "10時からの読み聞かせ会は未就学児に人気。絵本コーナーも充実しています。",
+          "tags": ["子育て", "図書館"],
+          "source": {
+            "type": "official",
+            "verifiedAt": "2026-01-01"
+          },
+          "updatedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "id": "medical",
+      "name": "医療・健康",
+      "icon": "🏥",
+      "description": "病院・クリニック・薬局の情報",
+      "items": [
+        {
+          "id": "hospital_1",
+          "title": "昭和大学横浜市北部病院",
+          "description": "救急対応可能な総合病院",
+          "details": "夜間救急も対応していますが、混雑時は待ち時間が長いことも。軽症なら翌日かかりつけ医へ。",
+          "tags": ["医療", "病院"],
+          "source": {
+            "type": "official",
+            "verifiedAt": "2026-01-01"
+          },
+          "updatedAt": "2026-01-01",
+          "location": {
+            "address": "神奈川県横浜市都筑区茅ケ崎中央35-1"
+          }
+        },
+        {
+          "id": "pediatrics_1",
+          "title": "たまプラーザこどもクリニック",
+          "description": "小児科専門。予防接種の予約が取りやすい",
+          "details": "先生が穏やかで子どもが怖がらないと評判。Web予約で待ち時間も少なめ。",
+          "tags": ["医療", "小児科"],
+          "source": {
+            "type": "postal_worker",
+            "name": "青葉郵便局 配達員",
+            "verifiedAt": "2026-01-10"
+          },
+          "updatedAt": "2026-01-10"
+        }
+      ]
+    },
+    {
+      "id": "shopping",
+      "name": "買い物",
+      "icon": "🛒",
+      "description": "スーパー・商店街・ショッピング情報",
+      "items": [
+        {
+          "id": "shopping_1",
+          "title": "たまプラーザテラス",
+          "description": "駅直結の大型商業施設",
+          "details": "雨の日でも濡れずに買い物できるので便利。地下の食品売り場は夜7時以降お得になることも。",
+          "tags": ["買い物", "ショッピングモール"],
+          "source": {
+            "type": "community",
+            "verifiedAt": "2026-01-05"
+          },
+          "updatedAt": "2026-01-05"
+        },
+        {
+          "id": "supermarket_1",
+          "title": "東急ストア たまプラーザ店",
+          "description": "駅近で便利なスーパー",
+          "details": "ポイント5倍デーは毎月15日と25日。お弁当は夕方6時頃から値引きシールが貼られます。",
+          "tags": ["買い物", "スーパー"],
+          "source": {
+            "type": "postal_worker",
+            "name": "青葉郵便局 配達員",
+            "verifiedAt": "2026-01-12"
+          },
+          "updatedAt": "2026-01-12"
+        }
+      ]
+    },
+    {
+      "id": "disaster",
+      "name": "防災",
+      "icon": "🚨",
+      "description": "避難所・ハザードマップ・防災情報",
+      "items": [
+        {
+          "id": "shelter_1",
+          "title": "指定避難所: 美しが丘小学校",
+          "description": "美しが丘エリアの指定避難所",
+          "details": "高台にあるので水害時も安心。備蓄品もありますが、3日分の水・食料は各家庭で準備を。",
+          "tags": ["防災", "避難所"],
+          "source": {
+            "type": "official",
+            "verifiedAt": "2025-04-01"
+          },
+          "updatedAt": "2025-04-01"
+        }
+      ]
+    },
+    {
+      "id": "transportation",
+      "name": "交通",
+      "icon": "🚃",
+      "description": "最寄り駅・バス・交通手段情報",
+      "items": [
+        {
+          "id": "station_1",
+          "title": "たまプラーザ駅（東急田園都市線）",
+          "description": "渋谷まで約25分、溝の口まで約10分",
+          "details": "朝のラッシュは7:30-8:30がピーク。急行より各停の方が空いていることも。始発駅のあざみ野で乗り換えれば座れます。",
+          "tags": ["交通", "電車"],
+          "source": {
+            "type": "community",
+            "verifiedAt": "2026-01-01"
+          },
+          "updatedAt": "2026-01-01"
+        }
+      ]
+    }
+  ]
+}

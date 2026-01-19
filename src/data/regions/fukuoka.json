@@ -1,0 +1,218 @@
+{
+  "id": "fukuoka-chuo",
+  "postalCode": "810",
+  "prefecture": "福岡県",
+  "city": "福岡市中央区",
+  "town": "天神・大名エリア",
+  "categories": [
+    {
+      "id": "daily_life",
+      "name": "生活基本",
+      "icon": "🏠",
+      "description": "ゴミ出し・町内会など日常生活の基本情報",
+      "items": [
+        {
+          "id": "garbage_1",
+          "title": "ゴミ収集日（天神エリア）",
+          "description": "可燃ゴミ: 月・木、不燃ゴミ: 第1・3火曜、空き缶等: 水曜",
+          "details": "福岡市は夜間収集なので、夕方から夜に出すのがルール。朝出すと注意されることがあります。",
+          "tags": ["生活", "ゴミ"],
+          "source": {
+            "type": "postal_worker",
+            "name": "福岡中央郵便局 配達員",
+            "verifiedAt": "2026-01-10"
+          },
+          "updatedAt": "2026-01-10"
+        },
+        {
+          "id": "garbage_2",
+          "title": "粗大ゴミの出し方",
+          "description": "事前申込制。受付センターに電話またはネット申込",
+          "details": "申込から収集まで1-2週間かかることも。引越し直後は特に混み合うので早めの申込を。",
+          "tags": ["生活", "ゴミ"],
+          "source": {
+            "type": "official",
+            "verifiedAt": "2026-01-01"
+          },
+          "updatedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "name": "子育て",
+      "icon": "👶",
+      "description": "保育園・学校・公園など子育て関連情報",
+      "items": [
+        {
+          "id": "park_1",
+          "title": "舞鶴公園",
+          "description": "福岡城跡を整備した大規模公園。遊具も充実",
+          "details": "春は桜の名所で混雑しますが、普段は広々としていて子どもを遊ばせやすいです。",
+          "tags": ["子育て", "公園"],
+          "source": {
+            "type": "community",
+            "verifiedAt": "2025-12-20"
+          },
+          "updatedAt": "2025-12-20",
+          "location": {
+            "address": "福岡県福岡市中央区城内1"
+          }
+        },
+        {
+          "id": "support_1",
+          "title": "子育て支援センター「のびのび」",
+          "description": "中央区役所内にある子育て支援施設",
+          "details": "保育士さんに育児相談ができます。初めての子育てで不安な方におすすめ。月齢別のイベントも。",
+          "tags": ["子育て", "支援"],
+          "source": {
+            "type": "postal_worker",
+            "name": "福岡中央郵便局 配達員",
+            "verifiedAt": "2026-01-08"
+          },
+          "updatedAt": "2026-01-08"
+        }
+      ]
+    },
+    {
+      "id": "medical",
+      "name": "医療・健康",
+      "icon": "🏥",
+      "description": "病院・クリニック・薬局の情報",
+      "items": [
+        {
+          "id": "hospital_1",
+          "title": "済生会福岡総合病院",
+          "description": "救急対応可能な総合病院",
+          "details": "紹介状なしでも受診可能ですが、初診料が別途かかります。まずはかかりつけ医を見つけることをおすすめ。",
+          "tags": ["医療", "病院"],
+          "source": {
+            "type": "official",
+            "verifiedAt": "2026-01-01"
+          },
+          "updatedAt": "2026-01-01"
+        },
+        {
+          "id": "clinic_1",
+          "title": "天神内科クリニック",
+          "description": "天神駅から徒歩5分。Web予約対応",
+          "details": "サラリーマンの利用が多いので、土曜午前は比較的空いています。予約優先なのでWebから取るのがおすすめ。",
+          "tags": ["医療", "内科"],
+          "source": {
+            "type": "postal_worker",
+            "name": "福岡中央郵便局 配達員",
+            "verifiedAt": "2026-01-12"
+          },
+          "updatedAt": "2026-01-12"
+        }
+      ]
+    },
+    {
+      "id": "shopping",
+      "name": "買い物",
+      "icon": "🛒",
+      "description": "スーパー・商店街・ショッピング情報",
+      "items": [
+        {
+          "id": "supermarket_1",
+          "title": "ボンラパス 大名店",
+          "description": "都心部にある24時間スーパー",
+          "details": "深夜でも買い物できるので便利。ただし深夜は品揃えが少なくなることも。お弁当は夜8時頃から値引き開始。",
+          "tags": ["買い物", "スーパー"],
+          "source": {
+            "type": "postal_worker",
+            "name": "福岡中央郵便局 配達員",
+            "verifiedAt": "2026-01-15"
+          },
+          "updatedAt": "2026-01-15"
+        },
+        {
+          "id": "market_1",
+          "title": "柳橋連合市場",
+          "description": "「博多の台所」と呼ばれる歴史ある市場",
+          "details": "新鮮な魚介類がお手頃価格で買えます。土曜の午前中が活気があっておすすめ。観光客も多いですが地元の常連さんも。",
+          "tags": ["買い物", "市場"],
+          "source": {
+            "type": "community",
+            "name": "天神在住 田中さん",
+            "verifiedAt": "2026-01-10"
+          },
+          "updatedAt": "2026-01-10"
+        }
+      ]
+    },
+    {
+      "id": "gourmet",
+      "name": "グルメ",
+      "icon": "🍽️",
+      "description": "飲食店・カフェ・テイクアウト情報",
+      "items": [
+        {
+          "id": "ramen_1",
+          "title": "博多ラーメン屋台街",
+          "description": "中洲の屋台街で本場の博多ラーメンを堪能",
+          "details": "金曜・土曜は観光客で混雑。平日夜の方がゆっくり楽しめます。屋台によって味が違うので食べ比べも楽しい。",
+          "tags": ["グルメ", "ラーメン"],
+          "source": {
+            "type": "community",
+            "verifiedAt": "2026-01-05"
+          },
+          "updatedAt": "2026-01-05"
+        }
+      ]
+    },
+    {
+      "id": "disaster",
+      "name": "防災",
+      "icon": "🚨",
+      "description": "避難所・ハザードマップ・防災情報",
+      "items": [
+        {
+          "id": "shelter_1",
+          "title": "指定避難所: 警固小学校",
+          "description": "天神・大名エリアの指定避難所",
+          "details": "天神地区は水害リスクは低いですが、台風シーズンは要注意。マンションの方も避難経路の確認を。",
+          "tags": ["防災", "避難所"],
+          "source": {
+            "type": "official",
+            "verifiedAt": "2025-04-01"
+          },
+          "updatedAt": "2025-04-01"
+        }
+      ]
+    },
+    {
+      "id": "transportation",
+      "name": "交通",
+      "icon": "🚃",
+      "description": "最寄り駅・バス・交通手段情報",
+      "items": [
+        {
+          "id": "station_1",
+          "title": "天神駅（地下鉄空港線）",
+          "description": "福岡空港まで約11分、博多駅まで約5分",
+          "details": "福岡は地下鉄の間隔が短くて便利です。西鉄天神駅もすぐ近くにあり、太宰府方面へも行けます。",
+          "tags": ["交通", "電車"],
+          "source": {
+            "type": "community",
+            "verifiedAt": "2026-01-01"
+          },
+          "updatedAt": "2026-01-01"
+        },
+        {
+          "id": "bus_1",
+          "title": "西鉄バス 100円循環バス",
+          "description": "天神・博多間を100円で移動できる便利なバス",
+          "details": "観光客にも人気ですが、地元の足としても重宝します。ラッシュ時は混雑するので時間に余裕を。",
+          "tags": ["交通", "バス"],
+          "source": {
+            "type": "postal_worker",
+            "name": "福岡中央郵便局 配達員",
+            "verifiedAt": "2026-01-10"
+          },
+          "updatedAt": "2026-01-10"
+        }
+      ]
+    }
+  ]
+}

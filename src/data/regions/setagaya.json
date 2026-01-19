@@ -1,0 +1,279 @@
+{
+  "id": "setagaya",
+  "postalCode": "154",
+  "prefecture": "東京都",
+  "city": "世田谷区",
+  "town": "池尻・三軒茶屋エリア",
+  "categories": [
+    {
+      "id": "daily_life",
+      "name": "生活基本",
+      "icon": "🏠",
+      "description": "ゴミ出し・町内会など日常生活の基本情報",
+      "items": [
+        {
+          "id": "garbage_1",
+          "title": "ゴミ収集日（池尻エリア）",
+          "description": "可燃ゴミ: 月・木、不燃ゴミ: 第1・3水曜、資源ゴミ: 火曜",
+          "details": "池尻の集積所は朝7時までに出さないと回収されないことがあります。特に夏場は早めの収集になる傾向があります。",
+          "tags": ["生活", "ゴミ"],
+          "source": {
+            "type": "postal_worker",
+            "name": "世田谷郵便局 配達員",
+            "verifiedAt": "2026-01-10"
+          },
+          "updatedAt": "2026-01-10"
+        },
+        {
+          "id": "neighborhood_1",
+          "title": "池尻町内会",
+          "description": "池尻町内会では年2回の防災訓練と夏祭りを実施しています",
+          "details": "入会金1,000円、月会費300円。回覧板は月2回程度回ってきます。",
+          "tags": ["生活", "地域活動"],
+          "source": {
+            "type": "community",
+            "name": "池尻3丁目 佐藤さん",
+            "verifiedAt": "2026-01-05"
+          },
+          "updatedAt": "2026-01-05"
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "name": "子育て",
+      "icon": "👶",
+      "description": "保育園・学校・公園など子育て関連情報",
+      "items": [
+        {
+          "id": "park_1",
+          "title": "世田谷公園",
+          "description": "大きな芝生広場とミニSLが人気の公園",
+          "details": "午前中はママさんが集まって情報交換をしていることが多いです。特に10時〜11時頃が賑わいます。",
+          "tags": ["子育て", "公園"],
+          "source": {
+            "type": "postal_worker",
+            "name": "世田谷郵便局 配達員",
+            "verifiedAt": "2026-01-08"
+          },
+          "updatedAt": "2026-01-08",
+          "location": {
+            "address": "東京都世田谷区池尻1-5-27"
+          }
+        },
+        {
+          "id": "nursery_1",
+          "title": "池尻保育園の入園事情",
+          "description": "区立保育園。0-1歳児クラスは競争率が高め",
+          "details": "4月入園の場合、前年10月〜11月が申込期間です。兄弟加点がないと0歳児は難しい傾向。近隣の三軒茶屋エリアも合わせて検討を。",
+          "tags": ["子育て", "保育園"],
+          "source": {
+            "type": "community",
+            "name": "地元ママコミュニティ",
+            "verifiedAt": "2025-12-20"
+          },
+          "updatedAt": "2025-12-20"
+        }
+      ]
+    },
+    {
+      "id": "medical",
+      "name": "医療・健康",
+      "icon": "🏥",
+      "description": "病院・クリニック・薬局の情報",
+      "items": [
+        {
+          "id": "clinic_1",
+          "title": "三茶ファミリークリニック",
+          "description": "内科・小児科。Web予約可能で待ち時間が短い",
+          "details": "予約なしでも比較的待ち時間が短いクリニックです。土曜午前も診療しているので便利。",
+          "tags": ["医療", "小児科", "内科"],
+          "source": {
+            "type": "postal_worker",
+            "name": "世田谷郵便局 配達員",
+            "verifiedAt": "2026-01-12"
+          },
+          "updatedAt": "2026-01-12",
+          "location": {
+            "address": "東京都世田谷区三軒茶屋2-14-10"
+          },
+          "contact": {
+            "phone": "03-XXXX-XXXX",
+            "website": "https://example.com"
+          }
+        },
+        {
+          "id": "pharmacy_1",
+          "title": "24時間営業の薬局情報",
+          "description": "三軒茶屋駅近くのドラッグストアは24時間営業",
+          "details": "処方箋は22時まで受付。深夜帯は市販薬のみ購入可能です。",
+          "tags": ["医療", "薬局"],
+          "source": {
+            "type": "official",
+            "verifiedAt": "2026-01-01"
+          },
+          "updatedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "id": "shopping",
+      "name": "買い物",
+      "icon": "🛒",
+      "description": "スーパー・商店街・ショッピング情報",
+      "items": [
+        {
+          "id": "supermarket_1",
+          "title": "オオゼキ池尻店",
+          "description": "生鮮食品が充実したスーパー",
+          "details": "火曜日が特売日で野菜がお得です。夕方5時以降は惣菜が半額になることも。",
+          "tags": ["買い物", "スーパー"],
+          "source": {
+            "type": "postal_worker",
+            "name": "世田谷郵便局 配達員",
+            "verifiedAt": "2026-01-15"
+          },
+          "updatedAt": "2026-01-15",
+          "location": {
+            "address": "東京都世田谷区池尻2-31-24"
+          }
+        },
+        {
+          "id": "shopping_street_1",
+          "title": "三軒茶屋すずらん通り商店街",
+          "description": "昔ながらの商店街。個人店が多く地元密着",
+          "details": "八百屋さんは顔なじみになると少しおまけしてくれることも。毎月第3土曜はスタンプ2倍デー。",
+          "tags": ["買い物", "商店街"],
+          "source": {
+            "type": "community",
+            "name": "三軒茶屋在住 山田さん",
+            "verifiedAt": "2026-01-10"
+          },
+          "updatedAt": "2026-01-10"
+        }
+      ]
+    },
+    {
+      "id": "gourmet",
+      "name": "グルメ",
+      "icon": "🍽️",
+      "description": "飲食店・カフェ・テイクアウト情報",
+      "items": [
+        {
+          "id": "cafe_1",
+          "title": "カフェ マメヒコ三軒茶屋店",
+          "description": "自家焙煎コーヒーが人気のカフェ",
+          "details": "平日午前中は比較的空いていて作業しやすい雰囲気。WiFiあり。",
+          "tags": ["グルメ", "カフェ"],
+          "source": {
+            "type": "community",
+            "verifiedAt": "2026-01-08"
+          },
+          "updatedAt": "2026-01-08"
+        },
+        {
+          "id": "restaurant_1",
+          "title": "地元で人気のラーメン店",
+          "description": "三軒茶屋駅から徒歩3分の行列店",
+          "details": "平日ランチタイムは11:30前に行くと並ばずに入れます。日曜は1時間待ちも。",
+          "tags": ["グルメ", "ラーメン"],
+          "source": {
+            "type": "postal_worker",
+            "name": "世田谷郵便局 配達員",
+            "verifiedAt": "2026-01-05"
+          },
+          "updatedAt": "2026-01-05"
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "name": "行事・イベント",
+      "icon": "🎉",
+      "description": "地域のお祭り・イベント情報",
+      "items": [
+        {
+          "id": "festival_1",
+          "title": "三軒茶屋ふれあい広場夏祭り",
+          "description": "毎年7月下旬開催。盆踊りと屋台が人気",
+          "details": "子ども向けのゲームコーナーが充実しています。18時以降は大変混雑するので子連れは早めの時間がおすすめ。",
+          "tags": ["イベント", "子育て"],
+          "source": {
+            "type": "community",
+            "verifiedAt": "2025-08-01"
+          },
+          "updatedAt": "2025-08-01"
+        }
+      ]
+    },
+    {
+      "id": "disaster",
+      "name": "防災",
+      "icon": "🚨",
+      "description": "避難所・ハザードマップ・防災情報",
+      "items": [
+        {
+          "id": "shelter_1",
+          "title": "指定避難所: 池尻小学校",
+          "description": "池尻エリアの指定避難所",
+          "details": "災害時は体育館が開放されます。ペット同行避難も可能ですが、ペット用品は持参が必要です。",
+          "tags": ["防災", "避難所"],
+          "source": {
+            "type": "official",
+            "verifiedAt": "2025-04-01"
+          },
+          "updatedAt": "2025-04-01",
+          "location": {
+            "address": "東京都世田谷区池尻2-4-10"
+          }
+        },
+        {
+          "id": "hazard_1",
+          "title": "目黒川沿いの浸水注意",
+          "description": "大雨時に目黒川が増水する可能性あり",
+          "details": "目黒川沿いは大雨で浸水しやすいので注意してください。過去には床下浸水の被害もありました。ハザードマップで確認を。",
+          "tags": ["防災", "水害"],
+          "source": {
+            "type": "postal_worker",
+            "name": "世田谷郵便局 配達員",
+            "verifiedAt": "2025-09-15"
+          },
+          "updatedAt": "2025-09-15"
+        }
+      ]
+    },
+    {
+      "id": "transportation",
+      "name": "交通",
+      "icon": "🚃",
+      "description": "最寄り駅・バス・交通手段情報",
+      "items": [
+        {
+          "id": "station_1",
+          "title": "三軒茶屋駅（東急田園都市線・世田谷線）",
+          "description": "渋谷まで約5分、二子玉川まで約10分",
+          "details": "朝のラッシュ時（7:30-9:00）は渋谷方面がかなり混雑します。1本待っても座れないこともあるので、時間に余裕を持って。",
+          "tags": ["交通", "電車"],
+          "source": {
+            "type": "community",
+            "verifiedAt": "2026-01-01"
+          },
+          "updatedAt": "2026-01-01"
+        },
+        {
+          "id": "bus_1",
+          "title": "渋谷行きバス（渋21系統）",
+          "description": "三軒茶屋から渋谷駅まで約15分",
+          "details": "雨の日は電車が混むのでバスがおすすめ。ただし道路渋滞で時間がかかることも。",
+          "tags": ["交通", "バス"],
+          "source": {
+            "type": "postal_worker",
+            "name": "世田谷郵便局 配達員",
+            "verifiedAt": "2026-01-10"
+          },
+          "updatedAt": "2026-01-10"
+        }
+      ]
+    }
+  ]
+}

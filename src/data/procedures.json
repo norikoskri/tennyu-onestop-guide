@@ -1,0 +1,233 @@
+{
+  "procedures": [
+    {
+      "id": "tennyu-todoke",
+      "name": "転入届",
+      "description": "新しい住所地の市区町村役場に届出が必要です",
+      "category": "admin",
+      "deadlineType": "relative",
+      "relativeDays": 14,
+      "priority": "high",
+      "automationLevel": 1,
+      "requiredDocs": [
+        "転出証明書（前住所地で発行）",
+        "本人確認書類（運転免許証・マイナンバーカード等）",
+        "印鑑"
+      ],
+      "officeInfo": {
+        "name": "市区町村役場 住民課",
+        "hours": "平日 8:30-17:00",
+        "address": "※転入先の役所をご確認ください"
+      },
+      "notes": "転入から14日以内に届出が必要です。届出が遅れると5万円以下の過料が科されることがあります。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "mynumber-address",
+      "name": "マイナンバーカード住所変更",
+      "description": "マイナンバーカードの住所欄を新住所に書き換えます",
+      "category": "admin",
+      "deadlineType": "relative",
+      "relativeDays": 90,
+      "priority": "medium",
+      "automationLevel": 2,
+      "requiredDocs": [
+        "マイナンバーカード",
+        "暗証番号（4桁）"
+      ],
+      "officeInfo": {
+        "name": "市区町村役場 住民課",
+        "hours": "平日 8:30-17:00",
+        "address": "※転入先の役所をご確認ください"
+      },
+      "notes": "転入届と同時に手続きできます。マイナンバーカードをお持ちの場合は忘れずに。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "health-insurance",
+      "name": "国民健康保険の加入手続き",
+      "description": "会社の健康保険に加入していない方は国民健康保険への加入が必要です",
+      "category": "admin",
+      "deadlineType": "relative",
+      "relativeDays": 14,
+      "priority": "high",
+      "automationLevel": 1,
+      "requiredDocs": [
+        "転出証明書または資格喪失証明書",
+        "本人確認書類",
+        "マイナンバーがわかるもの"
+      ],
+      "officeInfo": {
+        "name": "市区町村役場 国民健康保険課",
+        "hours": "平日 8:30-17:00",
+        "address": "※転入先の役所をご確認ください"
+      },
+      "notes": "会社員で会社の健康保険に加入している方は手続き不要です。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "electricity",
+      "name": "電気の契約",
+      "description": "新居での電気の使用開始手続き",
+      "category": "lifeline",
+      "deadlineType": "relative",
+      "relativeDays": 0,
+      "priority": "high",
+      "automationLevel": 3,
+      "requiredDocs": [],
+      "onlineUrl": "https://example.com/electricity",
+      "notes": "多くの電力会社でWebまたは電話での手続きが可能です。引越し当日から使えるように事前に申し込みを。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "gas",
+      "name": "ガスの開栓",
+      "description": "新居でのガスの使用開始手続き（立会いが必要）",
+      "category": "lifeline",
+      "deadlineType": "relative",
+      "relativeDays": 0,
+      "priority": "high",
+      "automationLevel": 3,
+      "requiredDocs": [],
+      "notes": "開栓には立会いが必要です。引越し日が決まったら早めに予約を。土日は予約が取りにくいことも。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "water",
+      "name": "水道の開栓",
+      "description": "新居での水道の使用開始手続き",
+      "category": "lifeline",
+      "deadlineType": "relative",
+      "relativeDays": 0,
+      "priority": "high",
+      "automationLevel": 3,
+      "requiredDocs": [],
+      "notes": "水道局のWebサイトまたは電話で手続きできます。集合住宅の場合は管理会社に確認が必要なことも。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "internet",
+      "name": "インターネット回線",
+      "description": "新居でのインターネット環境の準備",
+      "category": "lifeline",
+      "deadlineType": "relative",
+      "relativeDays": 14,
+      "priority": "medium",
+      "automationLevel": 3,
+      "requiredDocs": [],
+      "notes": "工事が必要な場合は2-4週間かかることも。早めに申し込みを。既存回線の移転手続きも確認を。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "bank-address",
+      "name": "銀行口座の住所変更",
+      "description": "銀行口座の登録住所を新住所に変更",
+      "category": "finance",
+      "deadlineType": "none",
+      "priority": "low",
+      "automationLevel": 1,
+      "requiredDocs": [
+        "届出印",
+        "通帳",
+        "本人確認書類"
+      ],
+      "notes": "多くの銀行でインターネットバンキングから変更可能です。キャッシュカードの届くまで1-2週間。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "credit-card",
+      "name": "クレジットカードの住所変更",
+      "description": "クレジットカードの登録住所を新住所に変更",
+      "category": "finance",
+      "deadlineType": "none",
+      "priority": "low",
+      "automationLevel": 1,
+      "requiredDocs": [],
+      "notes": "各カード会社のWebサイトまたはアプリから変更できます。請求書の届け先に注意。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "drivers-license",
+      "name": "運転免許証の住所変更",
+      "description": "運転免許証の住所変更手続き",
+      "category": "other",
+      "deadlineType": "none",
+      "priority": "medium",
+      "automationLevel": 1,
+      "requiredDocs": [
+        "運転免許証",
+        "新住所が確認できる書類（住民票、マイナンバーカード等）"
+      ],
+      "officeInfo": {
+        "name": "警察署・運転免許センター",
+        "hours": "平日 9:00-16:00（施設により異なる）",
+        "address": "※最寄りの警察署または運転免許センター"
+      },
+      "notes": "警察署なら待ち時間が短いことが多いです。運転免許センターは混雑します。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "postal-forward",
+      "name": "郵便物の転送届",
+      "description": "旧住所宛の郵便物を新住所に転送するサービス",
+      "category": "other",
+      "deadlineType": "relative",
+      "relativeDays": -7,
+      "priority": "high",
+      "automationLevel": 4,
+      "requiredDocs": [
+        "本人確認書類"
+      ],
+      "onlineUrl": "https://www.post.japanpost.jp/service/tenkyo/",
+      "notes": "引越し1週間前までに届出を。オンラインで手続きできます。転送期間は届出日から1年間。",
+      "conditions": [
+        { "type": "all", "operator": "equals", "value": true }
+      ]
+    },
+    {
+      "id": "nursery-school",
+      "name": "保育園・幼稚園の転園手続き",
+      "description": "転入先での保育園・幼稚園の入園手続き",
+      "category": "childcare",
+      "deadlineType": "relative",
+      "relativeDays": 30,
+      "priority": "high",
+      "automationLevel": 1,
+      "requiredDocs": [
+        "転入届出の写し",
+        "就労証明書（保育園の場合）",
+        "前園からの在園証明書"
+      ],
+      "officeInfo": {
+        "name": "市区町村役場 保育課",
+        "hours": "平日 8:30-17:00",
+        "address": "※転入先の役所をご確認ください"
+      },
+      "notes": "年度途中の転園は空きがないと難しいことも。早めに役所に相談を。",
+      "conditions": [
+        { "type": "has_children", "operator": "equals", "value": true },
+        { "type": "child_age", "operator": "less_than", "value": 6 }
+      ]
+    }
+  ]
+}
